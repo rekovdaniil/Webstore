@@ -1,0 +1,199 @@
+html, body 
+{
+  font-size: 10px;
+font-family: sans-serif;
+background-image: url("../img/Background.jpg");
+background-size: cover;
+}
+
+.title
+{
+display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 4rem;
+  font-family: "Arial", serif;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+
+
+.menu 
+{
+background-color: rgba(255, 255, 255, 0.3);
+align-self: stretch;
+}
+
+.footer
+{
+  font-size: 2rem;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+
+
+.flex-container-menu 
+{
+
+  justify-content: flex-end;
+  display: inline-flex;
+  font-size: 2.5rem;
+  flex-direction: column;
+
+
+}
+
+
+
+.flex-item-menu:nth-child(1)
+{
+  padding-bottom: 1rem;
+  margin: 0.2rem;
+}
+
+
+
+.flex-item-menu:nth-child(2) 
+{
+  padding-bottom: 2rem;
+  margin: 0.2rem;
+
+}
+
+
+
+.flex-item-menu:nth-child(3) 
+{
+  padding-bottom: 2rem;
+  margin: 0.2rem;
+}
+
+.flex-item-menu:nth-child(4)
+{
+  padding-bottom: 2rem;
+  margin: 0.2rem;
+}
+
+.flex-item-menu:nth-child(5)
+{
+  padding-bottom: 2rem;
+  margin: 0.2rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: yellow;
+}
+
+.grid-container
+{
+  display: grid;
+  height: 100%;
+  grid: 20rem 60rem 1fr/30rem 1fr;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas: "logo title" "menu main" "footer footer";
+
+}
+
+
+ #blink {
+   -webkit-animation: blink 2s linear infinite;
+   animation: blink 2s linear infinite;
+   font-weight: bold;
+   color: color: #F00;
+ }
+
+@-webkit-keyframes blink {
+  0% { color: #F00; }
+  50% { color: #FBB; }
+  100% { color: #F00; }
+}
+
+@keyframes blink {
+  0% { color: #F00; }
+  50% { color: #FBB; }
+  100% { color: #F00; }
+}
+
+
+
+.flex-container-main
+{
+  position: absolute;
+  left: 400; top: 350;
+  right: 0; bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  align-content: flex-start;
+
+
+
+
+}
+
+.flex-item {
+  padding: 0.5rem;
+  margin: 0.1rem;
+  background-color: rgba(255, 255, 255, 0.3);
+
+}
+
+h1 {
+  color: white;}
+
+
+h2 {
+  color: white;
+}
+
+h3 {
+  color: red;
+}
+
+
+@-webkit-keyframes blink6 {
+  10% { transform: scale(1, 1) rotate(80deg); }
+  20% { transform: scale(0, 0) rotate(160deg); }
+  100% { transform: scale(0, 0) rotate(0deg); }
+}
+@keyframes blink6 {
+  10% { transform: scale(1, 1) rotate(80deg); }
+  20% { transform: scale(0, 0) rotate(160deg); }
+  100% { transform: scale(0, 0) rotate(0deg); }
+}
+#blink6 {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  text-shadow: 0 0 10px #3d7a97;
+
+}
+#blink6:after, #blink6:before {
+  content: "";
+  position: absolute; top: 0; left: 0;
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-image:
+          radial-gradient(rgba(255,255,255,1), rgba(255,255,255,0) 30%),
+          linear-gradient(45deg, rgba(0,0,0,0) 49%, rgba(255,255,255,.4) 50%, rgba(0,0,0,0) 51%),
+          linear-gradient(135deg, rgba(0,0,0,0) 49%, rgba(255,255,255,.4) 50%, rgba(0,0,0,0) 51%);
+  -webkit-animation: blink6 10s linear infinite;
+  animation: blink6 10s linear infinite;
+  transform: scale(0, 0) rotate(0deg);
+}
+#blink6:before {
+  top: -30%;
+  right: 0; left: auto;
+  -webkit-animation-delay: 5s;
+  animation-delay: 5s;
+}
