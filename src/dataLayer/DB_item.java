@@ -15,14 +15,14 @@ import java.sql.*;
 
 public class DB_item {
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    //static final String DB_URL = "jdbc:mysql://localhost/buildingstore";
-    //static final String USER = "webappuser";
-    //static final String PASS = "enuter74";
+    static final String DB_URL = "jdbc:mysql://localhost/buildingstore";
+    static final String USER = "webappuser";
+    static final String PASS = "enuter74";
 
-    String DB_Url = System.getProperty("JDBC_CONNECTION_STRING");
-    String DB_User = System.getProperty("JDBC_USER");
-    String DB_Password = System.getProperty("JDBC_PASSWORD");
-    String DB_Connection_String = DB_Url + "?user=" + DB_User + "&password=" + DB_Password;
+    //String DB_Url = System.getProperty("JDBC_CONNECTION_STRING");
+    //String DB_User = System.getProperty("JDBC_USER");
+    //String DB_Password = System.getProperty("JDBC_PASSWORD");
+    //String DB_Connection_String = DB_Url + "?user=" + DB_User + "&password=" + DB_Password;
 
 
 
@@ -34,8 +34,8 @@ public class DB_item {
         try {
             Class.forName(JDBC_DRIVER);
 
-            Connection conn = DriverManager.getConnection(DB_Connection_String);
-            //!Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            //Connection conn = DriverManager.getConnection(DB_Connection_String);
+            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
             conn.setAutoCommit(false);
             System.out.println(title);
             System.out.println(category);
@@ -84,7 +84,9 @@ public class DB_item {
         //Запрос на добавление айтема
         try {
             Class.forName(JDBC_DRIVER);
-            Connection conn = DriverManager.getConnection(DB_Connection_String);
+
+            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+           // Connection conn = DriverManager.getConnection(DB_Connection_String);
 
             //Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
             conn.setAutoCommit(false);
@@ -134,9 +136,9 @@ public class DB_item {
 
         try {
             Class.forName(JDBC_DRIVER);
-            Connection conn = DriverManager.getConnection(DB_Connection_String);
+           // Connection conn = DriverManager.getConnection(DB_Connection_String);
 
-           // Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
             conn.setAutoCommit(false);
             String sql = "INSERT INTO chart (id, user_name,  iditem, quantity) VALUES (NULL , ?, ?,1)";
             System.out.println(sql);
@@ -174,9 +176,9 @@ public class DB_item {
             Class.forName("com.mysql.jdbc.Driver");
             //Connection opening
             System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(DB_Connection_String);
+           // conn = DriverManager.getConnection(DB_Connection_String);
 
-           // conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
             //Query execution
             System.out.println("Creating statement...");
             stmt = conn.createStatement();
@@ -270,9 +272,9 @@ public class DB_item {
             Class.forName("com.mysql.jdbc.Driver");
             //Connection opening
             System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(DB_Connection_String);
+           // conn = DriverManager.getConnection(DB_Connection_String);
 
-          //  conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
             //Query execution
             System.out.println("Creating statement...");
             stmt = conn.createStatement();
@@ -324,8 +326,8 @@ public class DB_item {
             Class.forName("com.mysql.jdbc.Driver");
             //Connection opening
             System.out.println("Connecting to database...");
-            //conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            conn = DriverManager.getConnection(DB_Connection_String);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            //conn = DriverManager.getConnection(DB_Connection_String);
 
             //Query execution
             System.out.println("Creating statement...");
@@ -376,8 +378,8 @@ public class DB_item {
             Class.forName("com.mysql.jdbc.Driver");
             //Connection opening
             System.out.println("Connecting to database...");
-            //conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            conn = DriverManager.getConnection(DB_Connection_String);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+           // conn = DriverManager.getConnection(DB_Connection_String);
 
             //Query execution
             System.out.println("Creating statement...");

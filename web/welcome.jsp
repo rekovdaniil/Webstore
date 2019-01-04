@@ -56,37 +56,18 @@
    </font></h1></marquee>
 <div align = right><img src="img/btc.png">
 <h2><font color = "#90ee90">
-    <%
-     Thread thread = new Thread("New Thread") {
-      public void run(){
-        //System.out.println("run by: " + getName());
-        try{
-         URL BtcUSD = new URL("https://blockchain.info/tobtc?currency=USD&value=1");
-        URLConnection yc = BtcUSD.openConnection();
-        BufferedReader in = new BufferedReader(new InputStreamReader(
-                yc.getInputStream()));
-        String inputLine = in.readLine();
-       // while ((inputLine = in.readLine()) != null)
-            out.println("1 BTC = " + 1/Float.parseFloat(inputLine) + "USD");
-        in.close();
-        } catch(Exception e){}
-      }
-   };
 
-       // thread.start();
+        <%
+     URL BtcUSD = new URL("https://blockchain.info/tobtc?currency=USD&value=1");
+  URLConnection yc = BtcUSD.openConnection();
+  BufferedReader in = new BufferedReader(new InputStreamReader(
+          yc.getInputStream()));
+  String inputLine;
+  while ((inputLine = in.readLine()) != null)
+    out.println("1 BTC = " + 1/Float.parseFloat(inputLine) + "USD");
+  in.close();
+%>
 
-   // response.setIntHeader("Refresh", 5);
-   /*
-         URL BtcUSD = new URL("https://blockchain.info/tobtc?currency=USD&value=1");
-        URLConnection yc = BtcUSD.openConnection();
-        BufferedReader in = new BufferedReader(new InputStreamReader(
-                yc.getInputStream()));
-        String inputLine;
-        while ((inputLine = in.readLine()) != null)
-            out.println("1 BTC = " + 1/Float.parseFloat(inputLine) + "USD");
-        in.close();
-        */
-    %>
 </div>
 </font></h2>
 <div class="grid-container">
@@ -138,7 +119,6 @@
                 <a href="chart.jsp"><img src="img/cahrt.png" align = "left" width = 40px height  =40px/>View Chart</a>
             </div>
 
-
         </div>
     </section>
 
@@ -147,11 +127,7 @@
         <div class="flex-container-main" >
             ${itemslist}
         </div>
-
-
-
     </section>
-
 </div>
 </body>
 </html>

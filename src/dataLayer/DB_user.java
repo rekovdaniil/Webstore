@@ -12,14 +12,13 @@ public class DB_user {
 
     // JDBC driver Name and Database URL
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-//    static final String DB_URL = "jdbc:mysql://localhost/buildingstore";
-
-  //  static final String USER = "webappuser";
-    //static final String PASS = "enuter74";
-  String DB_Url = System.getProperty("JDBC_CONNECTION_STRING");
-    String DB_User = System.getProperty("JDBC_USER");
-    String DB_Password = System.getProperty("JDBC_PASSWORD");
-    String DB_Connection_String = DB_Url + "?user=" + DB_User + "&password=" + DB_Password;
+    static final String DB_URL = "jdbc:mysql://localhost/buildingstore";
+    static final String USER = "webappuser";
+    static final String PASS = "enuter74";
+  //  String DB_Url = System.getProperty("JDBC_CONNECTION_STRING");
+ //   String DB_User = System.getProperty("JDBC_USER");
+  //  String DB_Password = System.getProperty("JDBC_PASSWORD");
+ //   String DB_Connection_String = DB_Url + "?user=" + DB_User + "&password=" + DB_Password;
 
 
     public boolean isValidUserLogin(String sUserName, String sUserPassword) {
@@ -35,9 +34,9 @@ public class DB_user {
             //Connection opening
             System.out.println("Connecting to database...");
 
-            conn = DriverManager.getConnection(DB_Connection_String);
+           // conn = DriverManager.getConnection(DB_Connection_String);
 
-            //      conn = DriverManager.getConnection(DB_URL, USER, PASS);
+                  conn = DriverManager.getConnection(DB_URL, USER, PASS);
             //Query execution
             System.out.println("Creating statement...");
             stmt = conn.createStatement();
@@ -96,9 +95,9 @@ public class DB_user {
                 Class.forName("com.mysql.jdbc.Driver");
                 //Connection opening
                 System.out.println("Connecting to database...");
-                conn = DriverManager.getConnection(DB_Connection_String);
+                //conn = DriverManager.getConnection(DB_Connection_String);
 
-               // conn = DriverManager.getConnection(DB_URL, USER, PASS);
+                conn = DriverManager.getConnection(DB_URL, USER, PASS);
                 //Query execution
                 System.out.println("Creating statement...");
                 stmt = conn.createStatement();
@@ -152,8 +151,8 @@ public class DB_user {
             Class.forName("com.mysql.jdbc.Driver");
             //Connection opening
             System.out.println("Connecting to database...");
-           // conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            conn = DriverManager.getConnection(DB_Connection_String);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+           // conn = DriverManager.getConnection(DB_Connection_String);
 
             //Query execution
             System.out.println("Creating statement...");
@@ -248,9 +247,9 @@ public class DB_user {
             Class.forName("com.mysql.jdbc.Driver");
             //Connection opening
             System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(DB_Connection_String);
+           // conn = DriverManager.getConnection(DB_Connection_String);
 
-           // conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
             //Query execution
             System.out.println("Creating statement...");
             stmt = conn.createStatement();
